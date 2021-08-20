@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand',sans-serif;
+    font-weight: 100;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(90deg, #b9deed, #efefef);
+}
+
+.main {
+    margin: 100px auto;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: #b9deed 2px 2px 5px 1px;
+}
+
+header {
+    position: relative;
+    font-size: 40px;
+    font-weight: 500;
+    white-space: nowrap
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.readonly-block {
+    position: relative;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+    padding-top: 10px;
+}
+
+.readonly-block input[type="checkbox"] {
+    display: none;
+}
+
+.readonly-block label {
+    color: #000;
+    cursor: default;
+    font-weight: normal;
+    line-height: 30px;
+    padding: 10px 0;
+    vertical-align: middle;
+}
+
+.readonly-block label:after {
+    content: " ";
+    color: #000;
+    margin-left: 12px;
+    border-radius: 5px;
+    display: inline-block;
+    font: 20px Arial;
+    position: relative;
+    text-align: center;
+    width: 16px;
+    height: 16px;
+    background: #FFF;
+    border: 1px solid #e3e3e3;
+    vertical-align: middle;
+}
+
+/* вариации внешнего вида в зав-ти от статуса checkbox */
+/* checked */
+.readonly-block input:checked + label:after {
+    content: url("img2.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: scale(0.2);
+    top: -6px;
+    left: -6px;
+}
+
+/* disabled */
+.readonly-block input:disabled + label:after {
+    background: #eee;
+    color: #aaa;
+}
+
+
+.input-block {
+    display: flex;
+    height: 45px;
+    width: 100%;
+    margin: 20px 0;
+
+}
+
+.input-block input {
+    height: 100%;
+    width: 70%;
+    border: 1px solid #b9deed;
+    font-size: 14px;
+    border-radius: 5px 0 0 5px;
+    padding: 0;
+    padding-left: 10px;
+    letter-spacing: -0.1px;
+    font-family: 'Exo 2',sans-serif;
+
+}
+
+.input-tag:focus {
+    outline: none;
+    border: 1px solid #e55d87;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+#active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.input-block button {
+    font-size: 16px;
+    height: 100%;
+    width: 30%;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(300deg, #e55d87 0%, #5fc3e4 50%);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.tags {
+    list-style: none;
+}
+
+.tags li {
+    font-family: 'Exo 2',sans-serif;
+    line-height: 45px;
+    position: relative;
+    background: linear-gradient(90deg, #b9deed, #efefef);
+    border-radius: 3px;
+    margin-bottom: 5px;
+    padding: 0 10px;
+    overflow: hidden;
+    word-break:break-all;
+}
+
+.trash {
+    position: absolute;
+    right: -45px;
+    color: white;
+    width: 45px;
+    text-align: center;
+    background: linear-gradient(135deg, #e55d87 50%, #5fc3e4 100%);
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.trash-off {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.tags li:hover .trash {
+    right: 0px;
+}
+
+.delete-tags {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.delete-tags-button {
+    height: 100%;
+    width: 30%;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(135deg, #e55d87 50%, #5fc3e4 100%);
+    padding: 6px 10px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+@media (max-width: 410px) {
+
+    .main {
+        margin: 10px;
+    }
+
+    .input-block input {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    header {
+        font-size: 35px;
+    }
+
+    .readonly-block {
+        font-size: 16px;
+    }
+
+    .input-block input {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    header {
+        font-size: 30px;
+    }
+
+}
+
+@media (max-width: 320px) {
+    .input-block input {
+        font-size: 8px;
+    }
+
+    header {
+        white-space: normal;
+        font-size: 35px;
+    }
+
+    .readonly-block {
+        white-space: nowrap;
+    }
+}

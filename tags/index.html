@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="main.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100&family=Quicksand:wght@300&display=swap" rel="stylesheet">    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main">
+    <div class="header">
+        <header>Tags creator</header>
+        <div class="readonly-block">
+            <input type="checkbox" id="readonly" name="readonly">
+            <label for="readonly">Readonly</br> mode</label>
+        </div>
+    </div>
+    <div class="input-block">
+        <input class="input-tag" type="text" placeholder="Enter your tags separated by a space">
+        <button type="button" class="input-block-button">Add</button>
+    </div>
+
+    <ul class="tags">
+    </ul>
+    <div class="delete-tags">
+        <div>You have <span class="number"></span> in list</div>
+        <button class="delete-tags-button">Delete all</button>
+    </div>
+</div>
+</body>
+</html>
